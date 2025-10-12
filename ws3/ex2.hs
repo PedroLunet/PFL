@@ -1,10 +1,18 @@
-import Data.Traversable (for)
 -- ex 3.2
 
+-- a)
+
 leastDiv :: Integer -> Integer
-leastDiv n = leastDivFrom n 2
+leastDiv n = loop n 2
   where
-	leastDivFrom n x
-	  | x > n = n
-	  | n `mod` x == 0 = x
-	  | otherwise = leastDivFrom n (x + 1)
+    loop x d
+      | d * d > x = n
+      | x `mod` d == 0 = d
+      | otherwise = loop n (d + 1)
+
+-- b)
+
+isPrimeFast :: Integer -> Bool
+isPrimeFast n
+  | n > 1 && n == leastDiv n = True
+  | otherwise = False
