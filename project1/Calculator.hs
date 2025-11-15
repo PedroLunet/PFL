@@ -23,8 +23,6 @@ data Expr
   | Mod Expr Expr
   deriving (Show)
 
-  -- test
-
 -- a recursive evaluator for expressions
 --
 eval :: Expr -> Integer
