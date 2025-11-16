@@ -119,3 +119,4 @@ evaluate txt =
   case parse expr txt of
     [(tree, "")] -> show (eval tree)
     _ -> "parse error; try again"
+
