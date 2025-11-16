@@ -83,8 +83,7 @@ satisfy :: (Char -> Bool) -> Parser Char
 satisfy f = do
   x <- getc
   if f x then return x else failure
- 
- --small change for test
+
 char :: Char -> Parser Char
 char c = satisfy (== c)
 
@@ -100,4 +99,3 @@ many1 p = do
   v <- p
   vs <- many p
   return (v : vs)
-
