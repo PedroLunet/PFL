@@ -1,2 +1,5 @@
 myLast :: [a] -> a
-myLast xs = head (reverse xs)
+myLast [] = error "empty list"
+myLast (x : xs)
+  | length xs == 0 = x
+  | otherwise = myLast xs
