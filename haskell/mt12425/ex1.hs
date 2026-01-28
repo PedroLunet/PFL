@@ -12,5 +12,5 @@ myLeague = [
 winner :: Match -> String 
 winner ((ta, tb),(ga, gb))
   | ga > gb = ta
-  | gb > gb = tb
+  | gb > ga = tb
   | otherwise = "draw"
